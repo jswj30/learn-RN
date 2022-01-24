@@ -1,11 +1,22 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, StatusBar } from 'react-native';
 
-const DateHead = () => {
+const DateHead = ({ date }) => {
+  const year = date.getFullYear();
+  const month= date.getMonth() + 1;
+  const day = date.getDate();
+
+  const formatted = `${year}년 ${month}월 ${day}일`;
+
   return (
-    <View style={styles.block}>
-      <Text style={styles.dataText}>2021년 5월 3일</Text>
-    </View>
+    <>
+      <StatusBar backgroundColor="#26a69a" />
+      <View style={styles.block}>
+        <Text style={styles.dataText}>
+          {year}년 {month}월 {day}일
+        </Text>
+      </View>
+    </>
   );
 };
 
