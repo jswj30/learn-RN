@@ -29,9 +29,16 @@ function SettingScreen({navigation}) {
 
 const App = () => {
   return (
-    <View>
-      <Text>123</Text>
-    </View>
+    <NavigationContainer>
+      <Drawer.Navigator
+        initialRouteName="Home"
+        drawerPosition="left"
+        backBehavior='history'
+      >
+        <Drawer.Screen name="Home" component={HomeScreen} />
+        <Drawer.Screen name="Setting" component={SettingScreen} />
+      </Drawer.Navigator>
+    </NavigationContainer>
   );
 };
 
