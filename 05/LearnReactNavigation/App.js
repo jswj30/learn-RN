@@ -2,7 +2,7 @@ import React from 'react';
 import {View, Text, TouchableOpacity} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import HomeScreens from './screens/HomeScreens';
+import HomeScreen from './screens/HomeScreen';
 import DetailScreen from './screens/DetailScreen';
 import HeaderlessScreen from './screens/HeaderlessScreen';
 
@@ -11,15 +11,15 @@ const Stack = createNativeStackNavigator();
 const App = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator 
-        initialRouteName="Home"
+      <Stack.Navigator
+        initialRouteName='Home'
         screenOptions={{
           headerShown: false, 
         }}
       >
         <Stack.Screen 
           name="Home" 
-          component={HomeScreens}
+          component={HomeScreen} 
           options={{
             title: '홈', 
             // Header 블록에 대한 스타일
@@ -33,11 +33,11 @@ const App = () => {
               fontWeight: 'bold', 
               fontSize: 20, 
             }, 
-          }} 
+          }}  
         />
         <Stack.Screen 
           name="Detail" 
-          component={DetailScreen} 
+          component={DetailScreen}
           options={{
             headerBackVisible: false, 
             headerLeft: ({onPress}) => (
@@ -54,7 +54,7 @@ const App = () => {
               <View>
                 <Text>Right</Text>
               </View>
-            ),  
+            ), 
           }}
         />
         <Stack.Screen 
