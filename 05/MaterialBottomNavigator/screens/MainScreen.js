@@ -57,6 +57,8 @@ const MainScreen = () => {
         options={{
           tabBarLabel: '홈', 
           tabBarIcon: ({color}) => <Icon name="home" color={color} size={24} />, 
+          tabBarColor: 'black', 
+          tabBarBadge: 'new', 
         }}
       />
       <Tab.Screen 
@@ -65,6 +67,7 @@ const MainScreen = () => {
         options={{
           tabBarLabel: '검색', 
           tabBarIcon: ({color}) => <Icon name="search" color={color} size={24} />, 
+          tabBarColor: 'gray', 
         }}
       />
       <Tab.Screen 
@@ -73,6 +76,8 @@ const MainScreen = () => {
         options={{
           tabBarLabel: '알림', 
           tabBarIcon: ({color}) => <Icon name="notification" color={color} size={24} />, 
+          tabBarColor: 'green', 
+          tabBarBadge: 30, 
         }}
       />
       <Tab.Screen 
@@ -81,6 +86,8 @@ const MainScreen = () => {
         options={{
           tabBarLabel: '메시지', 
           tabBarIcon: ({color}) => <Icon name="message" color={color} size={24} />, 
+          tabBarColor: 'blue', 
+          tabBarBadge: true, 
         }}
       />
     </Tab.Navigator>
