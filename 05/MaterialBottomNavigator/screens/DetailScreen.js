@@ -1,5 +1,7 @@
 import React, {useEffect} from 'react';
 import {View, Text, StyleSheet, Button} from 'react-native';
+import {useRoute} from '@react-navigation/native';
+
 const DetailScreen = ({route, navigation}) => {
   useEffect(() => {
     navigation.setOptions({
