@@ -17,7 +17,7 @@ function OpenDetailButton() {
   );
 }
 
-function HomeScreen({navigation}) {
+function HomeScreen() {
   return (
     <View>
       <Text>Home</Text>
