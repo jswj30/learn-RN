@@ -11,9 +11,9 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		6E6D6AEFFA7ABED58894BCC3 /* libPods-DayLog-DayLogTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D03A721AF50F79CD99C99F8 /* libPods-DayLog-DayLogTests.a */; };
+		22FEA01730A761C0DC029B90 /* libPods-DayLog.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EB04BEB75B00DEDFBEAC9A0A /* libPods-DayLog.a */; };
+		7C3CA604825862FDB5E9E997 /* libPods-DayLog-DayLogTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FE2431FA9EA5341F42C64F3 /* libPods-DayLog-DayLogTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		C3C09CC21471F1CDFA6F6331 /* libPods-DayLog.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CC4B7A852F8CE132C11DDF94 /* libPods-DayLog.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,20 +30,20 @@
 		00E356EE1AD99517003FC87E /* DayLogTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DayLogTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* DayLogTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DayLogTests.m; sourceTree = "<group>"; };
-		046C06B541FBE875670D084C /* Pods-DayLog.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DayLog.release.xcconfig"; path = "Target Support Files/Pods-DayLog/Pods-DayLog.release.xcconfig"; sourceTree = "<group>"; };
-		0D03A721AF50F79CD99C99F8 /* libPods-DayLog-DayLogTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DayLog-DayLogTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07F961A680F5B00A75B9A /* DayLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DayLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = DayLog/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = DayLog/AppDelegate.m; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = DayLog/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = DayLog/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = DayLog/main.m; sourceTree = "<group>"; };
-		49941F8EDA1FA31D24EED4EA /* Pods-DayLog-DayLogTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DayLog-DayLogTests.release.xcconfig"; path = "Target Support Files/Pods-DayLog-DayLogTests/Pods-DayLog-DayLogTests.release.xcconfig"; sourceTree = "<group>"; };
-		659A9D7F6C78B2B6E7160E77 /* Pods-DayLog-DayLogTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DayLog-DayLogTests.debug.xcconfig"; path = "Target Support Files/Pods-DayLog-DayLogTests/Pods-DayLog-DayLogTests.debug.xcconfig"; sourceTree = "<group>"; };
+		2FE2431FA9EA5341F42C64F3 /* libPods-DayLog-DayLogTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DayLog-DayLogTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E6161019F60446712B05FDA /* Pods-DayLog.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DayLog.release.xcconfig"; path = "Target Support Files/Pods-DayLog/Pods-DayLog.release.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = DayLog/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		CC4B7A852F8CE132C11DDF94 /* libPods-DayLog.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DayLog.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E41A2EEE1492F0BE8A8C5BBC /* Pods-DayLog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DayLog.debug.xcconfig"; path = "Target Support Files/Pods-DayLog/Pods-DayLog.debug.xcconfig"; sourceTree = "<group>"; };
+		DA41EA177D81D70B8E2FDA0B /* Pods-DayLog-DayLogTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DayLog-DayLogTests.debug.xcconfig"; path = "Target Support Files/Pods-DayLog-DayLogTests/Pods-DayLog-DayLogTests.debug.xcconfig"; sourceTree = "<group>"; };
+		EB04BEB75B00DEDFBEAC9A0A /* libPods-DayLog.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DayLog.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		F61C54BE1EA39BA3D5ED1BC5 /* Pods-DayLog-DayLogTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DayLog-DayLogTests.release.xcconfig"; path = "Target Support Files/Pods-DayLog-DayLogTests/Pods-DayLog-DayLogTests.release.xcconfig"; sourceTree = "<group>"; };
+		F8B94CE92D11628D3964AD74 /* Pods-DayLog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DayLog.debug.xcconfig"; path = "Target Support Files/Pods-DayLog/Pods-DayLog.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,7 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E6D6AEFFA7ABED58894BCC3 /* libPods-DayLog-DayLogTests.a in Frameworks */,
+				7C3CA604825862FDB5E9E997 /* libPods-DayLog-DayLogTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,7 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C3C09CC21471F1CDFA6F6331 /* libPods-DayLog.a in Frameworks */,
+				22FEA01730A761C0DC029B90 /* libPods-DayLog.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,19 +100,19 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				CC4B7A852F8CE132C11DDF94 /* libPods-DayLog.a */,
-				0D03A721AF50F79CD99C99F8 /* libPods-DayLog-DayLogTests.a */,
+				EB04BEB75B00DEDFBEAC9A0A /* libPods-DayLog.a */,
+				2FE2431FA9EA5341F42C64F3 /* libPods-DayLog-DayLogTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		5CA96EBC73BD730BEE43E8B9 /* Pods */ = {
+		645F694161FA293F9B602D2F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				E41A2EEE1492F0BE8A8C5BBC /* Pods-DayLog.debug.xcconfig */,
-				046C06B541FBE875670D084C /* Pods-DayLog.release.xcconfig */,
-				659A9D7F6C78B2B6E7160E77 /* Pods-DayLog-DayLogTests.debug.xcconfig */,
-				49941F8EDA1FA31D24EED4EA /* Pods-DayLog-DayLogTests.release.xcconfig */,
+				F8B94CE92D11628D3964AD74 /* Pods-DayLog.debug.xcconfig */,
+				6E6161019F60446712B05FDA /* Pods-DayLog.release.xcconfig */,
+				DA41EA177D81D70B8E2FDA0B /* Pods-DayLog-DayLogTests.debug.xcconfig */,
+				F61C54BE1EA39BA3D5ED1BC5 /* Pods-DayLog-DayLogTests.release.xcconfig */,
 			);
 			name = Pods;
 			path = Pods;
@@ -133,7 +133,7 @@
 				00E356EF1AD99517003FC87E /* DayLogTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
-				5CA96EBC73BD730BEE43E8B9 /* Pods */,
+				645F694161FA293F9B602D2F /* Pods */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -156,11 +156,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "DayLogTests" */;
 			buildPhases = (
-				7E2423B9752EBE6735BEB7FE /* [CP] Check Pods Manifest.lock */,
+				B0CF3A044B5AE8CDC8C67B72 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				CB8E062C9E1C9A3E532FEB6E /* [CP] Copy Pods Resources */,
+				09B92CA600E58F8C814EA79C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -176,13 +176,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "DayLog" */;
 			buildPhases = (
-				385C32541D94DA4D6788501B /* [CP] Check Pods Manifest.lock */,
+				A9E7CE6D87C40A067F2CDF91 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				82AF0263536F6CAEE75FB906 /* [CP] Copy Pods Resources */,
+				57C5516A5EDB67E9C9D7DB18 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -263,7 +263,41 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nexport NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
 		};
-		385C32541D94DA4D6788501B /* [CP] Check Pods Manifest.lock */ = {
+		09B92CA600E58F8C814EA79C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DayLog-DayLogTests/Pods-DayLog-DayLogTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DayLog-DayLogTests/Pods-DayLog-DayLogTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DayLog-DayLogTests/Pods-DayLog-DayLogTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		57C5516A5EDB67E9C9D7DB18 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DayLog/Pods-DayLog-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DayLog/Pods-DayLog-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DayLog/Pods-DayLog-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A9E7CE6D87C40A067F2CDF91 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -285,7 +319,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7E2423B9752EBE6735BEB7FE /* [CP] Check Pods Manifest.lock */ = {
+		B0CF3A044B5AE8CDC8C67B72 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -305,40 +339,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		82AF0263536F6CAEE75FB906 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DayLog/Pods-DayLog-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DayLog/Pods-DayLog-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DayLog/Pods-DayLog-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		CB8E062C9E1C9A3E532FEB6E /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DayLog-DayLogTests/Pods-DayLog-DayLogTests-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DayLog-DayLogTests/Pods-DayLog-DayLogTests-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DayLog-DayLogTests/Pods-DayLog-DayLogTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
@@ -393,7 +393,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 659A9D7F6C78B2B6E7160E77 /* Pods-DayLog-DayLogTests.debug.xcconfig */;
+			baseConfigurationReference = DA41EA177D81D70B8E2FDA0B /* Pods-DayLog-DayLogTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -420,7 +420,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 49941F8EDA1FA31D24EED4EA /* Pods-DayLog-DayLogTests.release.xcconfig */;
+			baseConfigurationReference = F61C54BE1EA39BA3D5ED1BC5 /* Pods-DayLog-DayLogTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -444,7 +444,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E41A2EEE1492F0BE8A8C5BBC /* Pods-DayLog.debug.xcconfig */;
+			baseConfigurationReference = F8B94CE92D11628D3964AD74 /* Pods-DayLog.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -470,7 +470,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 046C06B541FBE875670D084C /* Pods-DayLog.release.xcconfig */;
+			baseConfigurationReference = 6E6161019F60446712B05FDA /* Pods-DayLog.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
