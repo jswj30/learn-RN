@@ -8,7 +8,7 @@ const Stack = createNativeStackNavigator();
 const RootStack = () => {
   return (
     <Stack.Navigator
-      initialRouteName='Write'
+      initialRouteName='MainTab'
     >
       <Stack.Screen 
         name="MainTab" 
