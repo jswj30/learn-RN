@@ -17,6 +17,9 @@ const SearchHeader = () => {
         placeholder="검색어를 입력하세요"
         autoFocus 
       />
+      <Pressable style={({pressed}) => [styles.button, pressed && {opacity: 0.5}]}>
+        <Icon name="cancel" size={20} color="#9e9e9e" />
+      </Pressable>
     </View>
   )
 };
