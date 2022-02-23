@@ -1,10 +1,14 @@
 import {format} from 'date-fns';
-import React, {useContext} from 'react';
+import React, {useContext, useState} from 'react';
 import CalendarView from '../components/CalendarView';
 import LogContext from '../contexts/LogContext';
 
 const CalendarScreen = () => {
   const {logs} = useContext(LogContext);
+  const [selectedDate, setSelectedDate] = useState(
+    format(new Date(), 'yyyy-MM-dd')
+  );
+
   const markedDates = logs.reduce((acc, current) => {
     const formattedDate = format(new Date(current.date), 'yyyy-MM-dd');
     acc[formattedDate] = {marked: true};
@@ -12,7 +16,11 @@ const CalendarScreen = () => {
   }, {});
 
   return (
-    <CalendarView markedDates={markedDates} />
+    <CalendarView
+      markedDates={markedDates} 
+      selectedDate={selectedDate}
+      onSelectDate={setSelectedDate}
+    />
   );
 };
 
