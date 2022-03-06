@@ -42,7 +42,9 @@ const AddTodo = ({onInsert}) => {
         ), 
         android: (
           <View style={styles.circleWrapper}>
-            <TouchableNativeFeedback onPress={onPress}>{button}</TouchableNativeFeedback>
+            <TouchableNativeFeedback onPress={onPress}>
+              {button}
+            </TouchableNativeFeedback>
           </View>
         )
       })}
