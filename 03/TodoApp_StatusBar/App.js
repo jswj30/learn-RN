@@ -1,6 +1,7 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {StyleSheet, KeyboardAvoidingView, Platform} from 'react-native';
 import {SafeAreaProvider, SafeAreaView} from 'react-native-safe-area-context';
+import todosStorage from './storages/todosStorage';
 
 import DateHead from './components/DateHead';
 import AddTodo from './components/AddTodo';
@@ -14,6 +15,19 @@ const App = () => {
     {id: 2, text: '리액트 네이티브  기초 공부', done: false}, 
     {id: 3, text: '투두리스트 만들어보기', done: false}, 
   ]);
+
+  useEffect(() => {
+    todosStorage
+      .get()
+      .then(setTodos)
+      .catch(console.error);
+  }, []);
+
+  useEffect(() => {
+    todosStorage
+      .set(todos)
+      .catch(console.error);
+  }, [todos]);
 
   const onInsert = (text) => {
     const nextId = todos.length > 0 ? Math.max(...todos.map(todo => todo.id)) + 1 : 1;
