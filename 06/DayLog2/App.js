@@ -1,9 +1,12 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
+import RootStack from './screens/RootStack';
 
 const App = () => {
   return (
-    <NavigationContainer></NavigationContainer>
+    <NavigationContainer>
+      <RootStack />
+    </NavigationContainer>
   );
 };
 
