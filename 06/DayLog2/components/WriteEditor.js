@@ -13,7 +13,7 @@ const WriteEditor = ({title, body, onChangeTitle, onChangeBody}) => {
         onChangeText={onChangeTitle}
         value={title}
         onSubmitEditing={() => {
-          bodyRef.current.Focus();
+          bodyRef.current.focus();
         }}
       />
       <TextInput 
