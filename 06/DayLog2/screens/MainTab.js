@@ -1,16 +1,18 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import Icon from 'react-native-vector-icons/MaterialIcons';
+
 import FeedsScreen from './FeedsScreen';
 import CalendarScreen from './CalendarScreen';
 import SearchScreen from './SearchScreen';
-import Icon from 'react-native-vector-icons/MaterialIcons';
+import SearchHeader from '../components/SearchHeader';
 
 const Tab = createBottomTabNavigator();
 
 const MainTab = () => {
   return (
     <Tab.Navigator
-      // initialRouteName='Calendar'
+      initialRouteName='Search'
       screenOptions={{
         tabBarShowLabel: false, 
         tabBarActiveTintColor: '#009688', 
@@ -38,9 +40,11 @@ const MainTab = () => {
         name="Search" 
         component={SearchScreen} 
         options={{
+          title: '검색', 
           tabBarIcon: ({color, size}) => (
             <Icon name="search" size={size} color={color} />
           ), 
+          headerTitle: () => <SearchHeader />
         }}
       />
     </Tab.Navigator>
