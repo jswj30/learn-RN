@@ -43,7 +43,7 @@ const WriteScreen = ({route}) => {
           style: 'cancel', 
         }, 
         {
-          text: '취소', 
+          text: '삭제', 
           onPress: () => {
             onRemove(log?.id);
             navigation.pop();
@@ -63,7 +63,11 @@ const WriteScreen = ({route}) => {
         style={styles.avoidingView}
         behavior={Platform.OS === 'ios' ? 'padding' : undefined}
       >
-        <WriteHeader onSave={onSave} />
+        <WriteHeader 
+          onSave={onSave}
+          onAskRemove={onAskRemove}
+          isEditing={!!log}
+        />
         <WriteEditor 
           title={title}
           body={body}
