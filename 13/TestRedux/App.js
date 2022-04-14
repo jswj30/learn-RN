@@ -5,13 +5,15 @@ import { createStore } from 'redux';
 import rootReducer from './slices';
 
 import AuthApp from './components/AuthApp';
+import TodoApp from './components/TodoApp';
 
 const store = createStore(rootReducer);
 
 const App = () => {
   return (
     <Provider store={store}>
-      <AuthApp />
+      {/* <AuthApp /> */}
+      <TodoApp />
     </Provider>
   );
 };
