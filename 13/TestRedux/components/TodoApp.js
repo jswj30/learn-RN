@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text , StyleSheet, SafeAreaView, FlatList, TextInput, Pressable } from 'react-native';
+import useTodos from '../hooks/useTodos';
+import useTodosActions from '../hooks/useTodosActions';
 
 const BlackButon = ({ onPress, title }) => {
   return (
@@ -14,11 +16,13 @@ const BlackButon = ({ onPress, title }) => {
 }
 
 const TodoItem = ({id, text, done}) => {
+  const {toggle, remove} = useTodosActions();
+
   const onToggle = () => {
-    console.log(`토글 ${id}`);
+    toggle(id);
   };
   const onRemove = () => {
-    console.log(`제거 ${id}`);
+    remove(id);
   };
 
   return (
@@ -32,10 +36,7 @@ const TodoItem = ({id, text, done}) => {
 }
 
 const Todos = () => {
-  const todos = [
-    {id: 1, text: '리액트 네이티브 배우기', done: true}, 
-    {id: 2, text: '상태 관리 배우기', done: false}, 
-  ];
+  const todos = useTodos();
 
   return (
     <FlatList 
@@ -53,9 +54,10 @@ const Todos = () => {
 
 const TodoInput = () => {
   const [text, setText] = useState('');
+  const {add} = useTodosActions();
 
   const onPress = () => {
-    console.log('등록');
+    add(text);
     setText('');
   }
 
