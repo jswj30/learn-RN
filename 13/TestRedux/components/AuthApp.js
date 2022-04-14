@@ -1,7 +1,7 @@
 import React from 'react';
 import { SafeAreaView, View, Text, Button, StyleSheet } from 'react-native';
-import { useSelector, useDispatch } from 'react-redux';
-import { authorize, logout } from '../slices/auth';
+// import { useSelector, useDispatch } from 'react-redux';
+// import { authorize, logout } from '../slices/auth';
 import useAuthActions from '../hooks/useAuthActions';
 import useUser from '../hooks/useUser';
 
