@@ -1,11 +1,12 @@
 import React from 'react';
 import { SafeAreaView, View, Text, Button, StyleSheet } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
-// import { RootState } from '../slices';
 import { authorize, logout } from '../slices/auth';
+import useAuthActions from '../hooks/useAuthActions';
+import useUser from '../hooks/useUser';
 
 const AuthStatus = () => {
-  const user = useSelector((state) => state.auth.user);
+  const user = useUser();
 
   return (
     <View style={styles.status}>
@@ -17,25 +18,19 @@ const AuthStatus = () => {
 }
 
 const AuthButtons = () => {
-  const dispatch = useDispatch();
+  const { authorize, logout } = useAuthActions();
   const onPressLogin = () => {
-    dispatch(
-      authorize({
-        id: 1, 
-        username: 'johndoe', 
-        displayName: 'John Doe', 
-      }), 
-    );
+    authorize({
+      id: 1, 
+      username: 'johndoe', 
+      displayName: 'John Doe', 
+    });
   };
-
-  const onPressLogout = () => {
-    dispatch(logout());
-  }
 
   return (
     <View>
       <Button title="로그인" onPress={onPressLogin} />
-      <Button title="로그아웃" onPress={onPressLogout} />
+      <Button title="로그아웃" onPress={logout} />
     </View>
   );
 }
