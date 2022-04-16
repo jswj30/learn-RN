@@ -8,7 +8,7 @@ export function SearchContextProvider({children}) {
   return (
     <SearchContext.Provider value={{keyword, onChangeText}}>
       {children}
-    </SearchContext.Provider>
+    </SearchContext.Provider> 
   );
 }
 
