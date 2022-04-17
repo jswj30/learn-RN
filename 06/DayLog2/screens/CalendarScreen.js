@@ -1,53 +1,10 @@
-import React, { useRef, useState, useEffect } from 'react';
-import { Animated, Button, View, StyleSheet } from 'react-native';
-
-const SlideLeftAndRight = () => {
-  const animation = useRef(new Animated.Value(0)).current;
-  const [enabled, setEnabled] = useState(false);
-
-  useEffect(() => {
-    Animated.timing(animation, {
-      toValue: enabled ? 1 : 0, 
-      useNativeDriver: true, 
-    }).start();
-  }, [enabled, animation]);
-
-  return (
-    <View>
-      <Animated.View 
-        style={[
-          styles.rectangle, 
-          {
-            transform: [
-              {
-                translateX: animation.interpolate({
-                  inputRange: [0, 1], 
-                  outputRange: [0, 150], 
-                }), 
-              }
-            ], 
-            opacity: animation.interpolate({
-              inputRange: [0, 1], 
-              outputRange: [1, 0], 
-            })
-          }, 
-        ]}
-      />
-      <Button 
-        title='Toggle'
-        onPress={() => {
-          setEnabled(!enabled);
-        }}
-      />
-    </View>
-  )
-}
+import React from 'react';
+import { StyleSheet } from 'react-native';
+import CalendarView from '../components/CalendarView';
 
 const CalendarScreen = () => {
   return (
-    <View style={styles.block}>
-      <SlideLeftAndRight />
-    </View>
+    <CalendarView />
   );
 };
 
