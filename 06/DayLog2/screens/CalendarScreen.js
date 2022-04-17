@@ -1,22 +1,13 @@
-import React from 'react';
-import { StyleSheet } from 'react-native';
+import React, { useContext } from 'react';
 import CalendarView from '../components/CalendarView';
+import LogContext from '../contexts/LogContext';
 
 const CalendarScreen = () => {
+  const {logs} = useContext(LogContext);
+  
   return (
     <CalendarView />
   );
 };
-
-const styles = StyleSheet.create({
-  block: {
-
-  }, 
-  rectangle: {
-    width: 100, 
-    height: 100, 
-    backgroundColor: 'black',
-  }
-})
 
 export default CalendarScreen;
