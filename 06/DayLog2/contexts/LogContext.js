@@ -1,19 +1,29 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useState, useEffect, useRef } from 'react';
 import { v4 as uuid4 } from 'uuid';
+import logsStorage from '../storages/logsStorage';
 
 const LogContext = createContext();
 
 export function LogContextProvider({children}) {
-  const [logs, setLogs] = useState(
-    Array.from({length: 10})
-    .map((_, index) => ({
-      id: uuid4(), 
-      title: `Log ${index}`, 
-      body: `Log ${index}`, 
-      date: new Date().toISOString(), 
-    }))
-    .reverse()
-  );
+  const initialLogsRef = useRef(null);
+  const [logs, setLogs] = useState([]);
+
+  useEffect(() => {
+    (async () => {
+      const savedLogs = await logsStorage.get();
+      if (savedLogs) {
+        initialLogsRef.current = savedLogs;
+        setLogs(savedLogs);
+      }
+    })();
+  }, []);
+
+  useEffect(() => {
+    if (logs === initialLogsRef.current) {
+      return;
+    }
+    logsStorage.set(logs);
+  }, [logs]);
 
   const onCreate = ({title, body, date}) => {
     const log = {
