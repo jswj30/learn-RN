@@ -12,8 +12,8 @@ const SignInScreen = () => {
         <BorderedInput hasMarginBottom />
         <BorderedInput />
         <View style={styles.buttons}>
-          {/* <CustomButton title="로그인" hasMarginBottom /> */}
-          {/* <CustomButton title="회원가입" /> */}
+          <CustomButton title="로그인" hasMarginBottom />
+          <CustomButton title="회원가입" />
         </View>
       </View>
     </SafeAreaView>

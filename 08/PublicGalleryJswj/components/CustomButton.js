@@ -1,10 +1,10 @@
 import React from 'react';
-import { StyleSheet, View, Pressalbe, Text, Platform } from 'react-native';
+import { StyleSheet, View, Pressable, Text, Platform } from 'react-native';
 
-const CustomButton = ({onPress, title, hasMarginBottom}) => {
+const CustomButton = ({ onPress, title, hasMarginBottom }) => {
   return (
     <View style={[styles.block, hasMarginBottom && styles.margin]}>
-      <Pressalbe 
+      <Pressable 
         onPress={onPress}
         style={({pressed}) => [
           styles.wrapper, 
@@ -13,8 +13,8 @@ const CustomButton = ({onPress, title, hasMarginBottom}) => {
         android_ripple={{
           color: '#ffffff', 
         }}>
-        <Text style={[styles.text]}>{title}</Text>  
-      </Pressalbe>
+        <Text style={[styles.text]}>{title}</Text>
+      </Pressable>
     </View>
   );
 };
