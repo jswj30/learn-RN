@@ -1,37 +1,46 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import { 
   Keyboard, 
   KeyboardAvoidingView, 
   Platform, 
   StyleSheet, 
   Text, 
-  View,  
+  View, 
+  Alert, 
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import BorderedInput from '../components/BorderedInput';
-import CustomButton from '../components/CustomButton';
 import SignForm from './SignForm';
 import SignButtons from './SignButtons';
+import { signIn, signUp } from '../lib/auth';
 
 const SignInScreen = ({navigation, route}) => {
-  const {isSignUp} = route.params ?? {};
+  const {isSignUp} = route.params || {};
   
   const [form, setForm] = useState({
     email: '', 
     password: '', 
     confirmPassword: '', 
   });
-
-  const passwordRef = useRef();
-  const confirmPasswordRef = useRef();
+  const [loading, setLoading] = useState();
 
   const createChangeTextHandler = (name) => (value) => {
     setForm({...form, [name]: value});
   };
 
-  const onSubmit = () => {
+  const onSubmit = async () => {
     Keyboard.dismiss();
-    console.log(form);
+    const {email, password} = form;
+    const info = {email, password};
+    setLoading(true);
+    try {
+      const {user} = isSignUp ? await signUp(info) : await signIn(info);
+      console.log(user);
+    } catch (e) {
+      Alert.alert('실패');
+      console.log(e);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -47,7 +56,11 @@ const SignInScreen = ({navigation, route}) => {
             form={form}
             createChangeTextHandler={createChangeTextHandler}
           />
-          <SignButtons isSignUp={isSignUp} onSubmit={onSubmit} />
+          <SignButtons 
+            isSignUp={isSignUp} 
+            onSubmit={onSubmit} 
+            loading={loading}  
+          />
         </View>
       </SafeAreaView>
     </KeyboardAvoidingView>
