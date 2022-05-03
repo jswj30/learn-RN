@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigation, useRoute } from '@react-navigation/native';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, Pressable, Platform } from 'react-native';
+import { launchImageLibrary } from 'react-native-image-picker';
 import { signOut } from '../lib/auth';
 import { createUser } from '../lib/user';
 import BorderedInput from './BorderedInput';
@@ -29,6 +30,10 @@ const SetupProfile = () => {
     signOut();
     navigation.goBack();
   };
+
+  // const onSelectImage = () => {
+  //   launchImageLibrary()
+  // }
 
   return (
     <View style={styles.block}>
