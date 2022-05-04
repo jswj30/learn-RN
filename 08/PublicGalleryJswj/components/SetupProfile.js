@@ -54,7 +54,12 @@ const SetupProfile = () => {
       <Pressable onPress={onSelectImage}>
         <Image 
           style={styles.circle}
-          source={{uri: response?.assets[0]?.uri}} 
+          source={
+            response ? 
+            {uri: response?.assets[0]?.uri}
+             : 
+            require('../assets/user.png')
+          } 
         />
       </Pressable>
       <View style={styles.form}>
