@@ -11,7 +11,7 @@ const MainTab = () => {
         <Image 
           source={{uri: user.photoURL}}
           style={{width: 128, height: 128, marginBottom: 16}}
-          resizeMode='cover'
+          resizeMode='cover' 
         />
       )}
       <Text style={styles.text}>Hello, {user.displayName}</Text>
