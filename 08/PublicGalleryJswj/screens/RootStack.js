@@ -1,15 +1,31 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useUserContext } from '../contexts/UserContext';
 
 import SignInScreen from './SignInScreen';
 import WelcomeScreen from './WelcomeScreen';
 import MainTab from './MainTab';
+import { getUser } from '../lib/user';
+import { subscribeAuth } from '../lib/auth';
 
 const Stack = createNativeStackNavigator();
 
 const RootStack = () => {
-  const {user} = useUserContext();
+  const {user, setUser} = useUserContext();
+
+  useEffect(() => {
+    const unSubscribe = subscribeAuth(async currentUser => {
+      unSubscribe();
+      if (!currentUser) {
+        return;
+      }
+      const profile = await getUser(currentUser.uid);
+      if (!profile) {
+        return;
+      }
+      setUser(profile);
+    });
+  }, [setUser])
 
   return (
     <Stack.Navigator>
