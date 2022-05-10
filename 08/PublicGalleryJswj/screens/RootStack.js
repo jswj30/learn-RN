@@ -1,12 +1,13 @@
 import React, { useEffect } from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useUserContext } from '../contexts/UserContext';
+import { getUser } from '../lib/user';
+import { subscribeAuth } from '../lib/auth';
 
 import SignInScreen from './SignInScreen';
 import WelcomeScreen from './WelcomeScreen';
 import MainTab from './MainTab';
-import { getUser } from '../lib/user';
-import { subscribeAuth } from '../lib/auth';
+import UploadScreen from './UploadScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -35,6 +36,11 @@ const RootStack = () => {
             name="MainTab"
             component={MainTab}
             options={{headerShown: false}}
+          />
+          <Stack.Screen 
+            name="Upload"
+            component={UploadScreen}
+            options={{title: '새 게시물', headerBackTitle: '뒤로가기'}}
           />
         </>
       ) : (
