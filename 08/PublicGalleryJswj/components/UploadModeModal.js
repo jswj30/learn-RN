@@ -60,6 +60,7 @@ const styles = StyleSheet.create({
   }, 
   actionText: {
     fontSize: 16, 
+    color:  '#757575', 
   }, 
 });
 
