@@ -1,11 +1,11 @@
 import React from 'react';
-import { StyleSheet, View, Pressalbe, Platform } from 'react-native';
+import { StyleSheet, View, Pressable, Platform } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 const IconRightButton = ({name, color, onPress}) => {
   return (
     <View style={styles.block}>
-      <Pressalbe 
+      <Pressable 
         style={({pressed}) => [
           styles.circle, 
           Platform.OS === 'ios' && 
@@ -17,7 +17,7 @@ const IconRightButton = ({name, color, onPress}) => {
         android_ripple={{color: '#eee'}}
       >
         <Icon name={name} size={24} color={color} />
-      </Pressalbe>
+      </Pressable>
     </View>
   );
 };
