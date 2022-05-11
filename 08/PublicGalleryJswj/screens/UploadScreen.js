@@ -6,8 +6,14 @@ import {
   useWindowDimensions, 
   Animated, 
   Keyboard, 
+  Platform, 
 } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
+import storage from '@react-native-firebase/storage';
+import { useUserContext } from '../contexts/UserContext';
+import { v4 } from 'uuid';
+import { createPost } from '../lib/posts';
+
 import IconRightButton from '../components/IconRightButton';
 
 const UploadScreen = () => {
@@ -16,13 +22,28 @@ const UploadScreen = () => {
   const {width} = useWindowDimensions();
   const animation = useRef(new Animated.Value(width)).current;
   const navigation = useNavigation();
+  const {user} = useUserContext();
 
   const [isKeyboardOpen, setIsKeyboardOpen] = useState(false);
   const [description, setDescription] = useState('');
 
-  const onSubmit = useCallback(() => {
+  const onSubmit = useCallback(async () => {
+    navigation.pop();
+    const asset = res.assets[0];
 
-  }, []);
+    const extension = asset.fileName.split('.').pop();
+    const reference = storage().ref(`/photo/${user.id}/${v4()}.${extension}`);
+    if (Platform.OS === 'android') {
+      await reference.putString(asset.base64, 'base64', {
+        contentType: asset.type, 
+      });
+    } else {
+      await reference.putFile(asset.uri);
+    }
+    const photoURL = await reference.getDownloadURL();
+    await createPost({description, photoURL, user});
+    // 포스트 목록 새로고침
+  }, [res, user, description, navigation]);
 
   useEffect(() => {
     const didShow = Keyboard.addListener('keyboardDidShow', () => 
