@@ -13,7 +13,6 @@ export function createPost({user, photoURL, description}) {
 
 export async function getPosts() {
   const snapshot = await postsCollection.get();
-  console.log('snapshot', snapshot);
   const posts = snapshot.docs.map((doc) => ({
     id: doc.id, 
     ...doc.data(), 
