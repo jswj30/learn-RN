@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { FlatList } from 'react-native';
+import { FlatList, ActivityIndicator, StyleSheet } from 'react-native';
 import { getPosts } from '../lib/posts';
 
 import PostCard from '../components/PostCard';
@@ -29,5 +29,14 @@ const renderItem = ({item}) => (
     id={item.id}
   />
 )
+
+const styles = StyleSheet.create({
+  container: {
+    paddingBottom: 48, 
+  }, 
+  spinner: {
+    height: 64, 
+  }, 
+});
 
 export default FeedScreen;
