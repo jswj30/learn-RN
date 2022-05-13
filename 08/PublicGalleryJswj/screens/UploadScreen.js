@@ -7,6 +7,7 @@ import {
   Animated, 
   Keyboard, 
   Platform, 
+  KeyboardAvoidingView, 
 } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import storage from '@react-native-firebase/storage';
@@ -75,7 +76,13 @@ const UploadScreen = () => {
   }, [navigation, onSubmit]);
 
   return (
-    <View style={styles.block}>
+    <KeyboardAvoidingView
+      behavior={Platform.select({ios: 'height'})} 
+      style={styles.block} 
+      keyboardVerticalOffset={Platform.select({
+        ios: 180, 
+      })}
+    >
       <Animated.Image 
         source={{uri: res.assets[0]?.uri}}
         style={[styles.image, {height: animation}]}
@@ -89,7 +96,7 @@ const UploadScreen = () => {
         value={description}
         onChangeText={setDescription}
       />
-    </View>
+    </KeyboardAvoidingView>
   );
 };
 

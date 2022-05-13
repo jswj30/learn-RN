@@ -1,4 +1,4 @@
-import firestore from '@react-native-firebase/firebase';
+import firestore from '@react-native-firebase/firestore';
 
 const postsCollection = firestore().collection('posts');
 
