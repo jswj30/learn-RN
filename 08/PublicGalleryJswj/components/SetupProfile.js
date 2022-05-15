@@ -9,6 +9,8 @@ import CustomButton from './CustomButton';
 import { useUserContext } from '../contexts/UserContext';
 import storage from '@react-native-firebase/storage';
 
+import Avatar from './Avatar';
+
 const SetupProfile = () => {
   const navigation = useNavigation();
   const {params} = useRoute();
@@ -75,15 +77,7 @@ const SetupProfile = () => {
   return (
     <View style={styles.block}>
       <Pressable onPress={onSelectImage}>
-        <Image 
-          style={styles.circle}
-          source={
-            response ? 
-            {uri: response?.assets[0]?.uri}
-             : 
-            require('../assets/user.png')
-          } 
-        />
+        <Avatar source={response && {uri: response.uri}} size={128} />
       </Pressable>
       <View style={styles.form}>
         <BorderedInput 

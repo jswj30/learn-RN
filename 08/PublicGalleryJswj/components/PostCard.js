@@ -1,5 +1,8 @@
 import React, { useMemo } from 'react';
 import { View, StyleSheet, Text, Image, Pressable } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+
+import Avatar from './Avatar';
 
 const PostCard = ({user, photoURL, description, createdAt, id}) => {
   const date = useMemo(
@@ -7,24 +10,20 @@ const PostCard = ({user, photoURL, description, createdAt, id}) => {
     [createdAt]
   );
 
+  const navigation = useNavigation();
+
   const onOpenProfile = () => {
-    // TODO: 사용자 프로필 화면 열
+    navigation.navigate('Profile', {
+      userId: user.id, 
+      displayName: user.displayName, 
+    });
   };
 
   return (
     <View style={styles.block}>
       <View style={[styles.head, styles.paddingBlock]}>
         <Pressable style={styles.profile} onPress={onOpenProfile}>
-          <Image 
-            source={
-              user.photoURL ? 
-              {uri: user.photoURL}
-               : 
-              require('../assets/user.png')
-            }
-            resizeMode="cover"
-            style={styles.avatar}
-          />
+          <Avatar source={user.photoURL && {uri: user.photoURL}} />
           <Text style={styles.displayName}>{user.displayName}</Text>
         </Pressable>
       </View>
