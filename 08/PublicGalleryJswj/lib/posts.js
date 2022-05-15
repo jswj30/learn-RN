@@ -23,6 +23,7 @@ export async function getPosts() {
     id: doc.id, 
     ...doc.data(), 
   }));
+
   return posts;
 }
 

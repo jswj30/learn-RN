@@ -53,7 +53,7 @@ const FeedScreen = () => {
         )
       }
       refreshControl={
-        <RefreshControl onRefresh={onRefresh} refershing={refreshing} />
+        <RefreshControl onRefresh={onRefresh} refreshing={refreshing} />
       }
     />
   );
