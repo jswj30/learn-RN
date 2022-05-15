@@ -14,7 +14,7 @@ export function createPost({user, photoURL, description}) {
 export const PAGE_SIZE = 3;
 
 export async function getPosts({userId, mode, id} = {}) {
-  let query = postsCollection.orderBy('createdAte', 'desc').limit(PAGE_SIZE);
+  let query = postsCollection.orderBy('createdAt', 'desc').limit(PAGE_SIZE);
   if (userId) {
     query = query.where('user.id', '==', userId);
   }
