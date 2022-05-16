@@ -10,7 +10,7 @@ const HomeStack = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen name="Feed" component={FeedScreen} />
-      <Stack.Screen name="Profile" component={ProfileScreen} />
+    <Stack.Screen name="Profile" component={ProfileScreen} />
     </Stack.Navigator>
   );
 };

@@ -11,6 +11,7 @@ import { getPosts } from '../lib/posts';
 import { getUser } from '../lib/user';
 
 import Avatar from './Avatar';
+import PostGridItem from './PostGridItem';
 
 const Profile = ({userId}) => {
   const [user, setUser] = useState(null);
@@ -30,6 +31,10 @@ const Profile = ({userId}) => {
   return (
     <FlatList 
       style={styles.block}
+      data={posts}
+      renderItem={renderItem}
+      numColumns={3}
+      keyExtractor={(item) => item.id}
       ListHeaderComponent={
         <View style={styles.userInfo}>
           <Avatar source={user.photoURL && {uri: user.photoURL}} size={128} />
@@ -39,6 +44,8 @@ const Profile = ({userId}) => {
     />
   );
 };
+
+const renderItem = ({item}) => <PostGridItem post={item} />;
 
 const styles = StyleSheet.create({
   spinner: {
