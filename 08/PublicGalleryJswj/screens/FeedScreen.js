@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { FlatList, ActivityIndicator, StyleSheet, RefreshControl } from 'react-native';
 
 import PostCard from '../components/PostCard';
