@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react-native';
+import { useEffect, useState } from 'react';
 import { getNewerPosts, getOlderPosts, getPosts, PAGE_SIZE } from '../lib/posts';
 
 export default function usePosts(userId) {
