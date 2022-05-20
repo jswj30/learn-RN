@@ -5,6 +5,8 @@ import { useUserContext } from '../contexts/UserContext';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import Avatar from './Avatar';
+import ActionSheetModal from './ActionSheetModal';
+import usePostActions from '../hooks/usePostActions';
 
 const PostCard = ({user, photoURL, description, createdAt, id}) => {
   const date = useMemo(
@@ -27,6 +29,8 @@ const PostCard = ({user, photoURL, description, createdAt, id}) => {
       });
     }
   };
+
+  const {isSelecting, onPressMore, onClose, actions} = usePostActions();
 
   return (
     <View style={styles.block}>
@@ -53,6 +57,11 @@ const PostCard = ({user, photoURL, description, createdAt, id}) => {
           {date.toLocaleString()}
         </Text>
       </View>
+      <ActionSheetModal 
+        visible={isSelecting}
+        actions={actions}
+        onClose={onClose}
+      />
     </View>
   );
 };
