@@ -33,36 +33,38 @@ const PostCard = ({user, photoURL, description, createdAt, id}) => {
   const {isSelecting, onPressMore, onClose, actions} = usePostActions({id, description});
 
   return (
-    <View style={styles.block}>
-      <View style={[styles.head, styles.paddingBlock]}>
-        <Pressable style={styles.profile} onPress={onOpenProfile}>
-          <Avatar source={user.photoURL && {uri: user.photoURL}} />
-          <Text style={styles.displayName}>{user.displayName}</Text>
-        </Pressable>
-        {isMyPost && (
-          <Pressable hitSlop={8}>
-            <Icon name="more-vert" size={20} />
+    <>
+      <View style={styles.block}>
+        <View style={[styles.head, styles.paddingBlock]}>
+          <Pressable style={styles.profile} onPress={onOpenProfile}>
+            <Avatar source={user.photoURL && {uri: photoURL}} />
+            <Text style={styles.displayName}>{user.displayName}</Text>
           </Pressable>
-        )}
+          {isMyPost && (
+            <Pressable hitSlop={8} onPress={onPressMore}>
+              <Icon name="more-vert" size={20} />
+            </Pressable>
+          )}
+        </View>
+        <Image 
+          source={{uri: photoURL}}
+          style={styles.image}
+          resizeMethod="resize"
+          resizeMode='cover'
+        />
+        <View style={styles.paddingBlock}>
+          <Text style={styles.description}>{description}</Text>
+          <Text style={styles.date} date={date}>
+            {date.toLocaleString()}
+          </Text>
+        </View>
+        <ActionSheetModal 
+          visible={isSelecting}
+          actions={actions}
+          onClose={onClose}
+        />
       </View>
-      <Image 
-        source={{uri: photoURL}}
-        style={styles.image}
-        resizeMethod="resize"
-        resizeMode='cover'
-      />
-      <View style={styles.paddingBlock}>
-        <Text style={styles.description}>{description}</Text>
-        <Text style={styles.date} date={date}>
-          {date.toLocaleString()}
-        </Text>
-      </View>
-      <ActionSheetModal 
-        visible={isSelecting}
-        actions={actions}
-        onClose={onClose}
-      />
-    </View>
+    </>
   );
 };
 
