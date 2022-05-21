@@ -16,7 +16,14 @@ import PostGridItem from './PostGridItem';
 import usePosts from '../hooks/usePosts';
 
 const Profile = ({userId}) => {
-  const {posts, noMorePost, refreshing, onLoadMore, onRefresh} = usePosts(userId);
+  const {
+    posts, 
+    noMorePost, 
+    refreshing, 
+    onLoadMore, 
+    onRefresh, 
+    removePost, 
+  } = usePosts(userId);
   const {user: me} = useUserContext();
   const isMyProfile = me.id === userId;
 
@@ -32,8 +39,10 @@ const Profile = ({userId}) => {
       return;
     }
     events.addListener('refresh', onRefresh);
+    events.addListener('removePost', removePost);
     return () => {
       events.removeListener('refresh', onRefresh);
+      events.removeListener('removePost', removePost);
     };
   }, [isMyProfile, onRefresh]);
 
