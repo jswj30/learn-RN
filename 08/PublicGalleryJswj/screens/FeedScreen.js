@@ -12,17 +12,7 @@ const FeedScreen = () => {
     refreshing, 
     onLoadMore, 
     onRefresh, 
-    removePost, 
   } = usePosts();
-
-  useEffect(() => {
-    events.addListener('refresh', onRefresh);
-    events.addListener('removePost', removePost);
-    return () => {
-      events.removeListener('refresh', onRefresh);
-      events.removeListener('removePost', removePost);
-    };
-  }, [onRefresh]);
 
   return (
     <FlatList 
