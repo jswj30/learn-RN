@@ -14,6 +14,7 @@ import storage from '@react-native-firebase/storage';
 import { useUserContext } from '../contexts/UserContext';
 import { v4 } from 'uuid';
 import { createPost } from '../lib/posts';
+import events from '../lib/event';
 
 import IconRightButton from '../components/IconRightButton';
 
@@ -43,6 +44,8 @@ const UploadScreen = () => {
     }
     const photoURL = await reference.getDownloadURL();
     await createPost({description, photoURL, user});
+
+    events.emit('refresh');
     // 포스트 목록 새로고침
   }, [res, user, description, navigation]);
 

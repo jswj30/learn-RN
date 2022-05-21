@@ -1,11 +1,20 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { FlatList, ActivityIndicator, StyleSheet, RefreshControl } from 'react-native';
 
 import PostCard from '../components/PostCard';
 import usePosts from '../hooks/usePosts';
+import events from '../lib/event';
 
 const FeedScreen = () => {
   const {posts, noMorePost, refreshing, onLoadMore, onRefresh} = usePosts();
+
+  useEffect(() => {
+    events.addListener('refresh', onRefresh);
+    return () => {
+      events.removeListener('refresh', onRefresh);
+    };
+  }, [onRefresh]);
+
   return (
     <FlatList 
       data={posts}
