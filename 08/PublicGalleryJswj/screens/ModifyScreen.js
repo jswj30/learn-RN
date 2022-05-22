@@ -7,6 +7,7 @@ import {
   KeyboardAvoidingView, 
 } from 'react-native';
 import { updatePost } from '../lib/posts';
+import events from '../lib/event';
 
 import IconRightButton from '../components/IconRightButton';
 
@@ -21,7 +22,10 @@ const ModifyScreen = () => {
       id: params.id, 
       description, 
     });
-    // TODO: 포스트 및 포스트 목록 업데이트
+    events.emit('updatePost', {
+      postId: params.id, 
+      description, 
+    });
     navigation.pop();
   }, [navigation, params.id, description]);
 
